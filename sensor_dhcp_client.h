@@ -17,15 +17,15 @@
 class SensorDHCPClient
 {
 public:
-	SensorDHCPClient(uint8_t ServerAddress);
-	~SensorDHCPClient();
-	
-	void initialize();	
+  SensorDHCPClient(uint8_t ServerAddress);
+  ~SensorDHCPClient();
+  
+  void initialize();  
 private:
-	SensorDHCPClientProperties properties;
-	int bootsSinceLease;
-	uint8_t serverAddress;	
-	uint8_t clientAddress;
+  SensorDHCPClientProperties properties;
+  int bootsSinceLease;
+  uint8_t serverAddress;  
+  uint8_t clientAddress;
 };
 
 #endif

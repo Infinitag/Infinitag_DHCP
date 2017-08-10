@@ -17,23 +17,23 @@
 class SensorDHCPServer
 {
 public:
-	SensorDHCPServer(uint8_t ServerAddress, uint16_t scanInterval);
-	~SensorDHCPServer();
-	
-	void initialize();
-	
-	uint8_t getNextFreeSlot() const;
-	
-	void scanIfNecessary(bool forceScan = false);
-	void registerNewClient();
-	
+  SensorDHCPServer(uint8_t ServerAddress, uint16_t scanInterval);
+  ~SensorDHCPServer();
+  
+  void initialize();
+  
+  uint8_t getNextFreeSlot() const;
+  
+  void scanIfNecessary(bool forceScan = false);
+  void registerNewClient();
+  
 private:
-	uint8_t serverAddress;
-	uint16_t scanInterval;
-	uint16_t callsSinceLastScan;
-	SensorDHCPClientProperties clients[IIC_DHCP_ADDRESS_RANGE];
-	
-	EEPROMEntry<SensorDHCPServer> Memory;
+  uint8_t serverAddress;
+  uint16_t scanInterval;
+  uint16_t callsSinceLastScan;
+  SensorDHCPClientProperties clients[IIC_DHCP_ADDRESS_RANGE];
+  
+  EEPROMEntry<SensorDHCPServer> Memory;
 };
 
 #endif

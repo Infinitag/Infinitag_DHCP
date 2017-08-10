@@ -16,19 +16,19 @@
 class SensorDHCPClientProperties
 {
 public:
-	SensorDHCPClientProperties();
-	SensorDHCPClientProperties(uint8_t Address, dhcp_client_type Type = DHCP_NO_CLIENT);
-	
-	static SensorDHCPClientProperties retrievePropertiesFromEEPROM(int BaseAddress);
-	static void writePropertiesToEEPROM(int BaseAddress, const SensorDHCPClientProperties& properties);
-	
-	void initializeClient();
-	dhcp_client_type getClientType() const { return clientType; }
+  SensorDHCPClientProperties();
+  SensorDHCPClientProperties(uint8_t Address, dhcp_client_type Type = DHCP_NO_CLIENT);
+  
+  static SensorDHCPClientProperties retrievePropertiesFromEEPROM(int BaseAddress);
+  static void writePropertiesToEEPROM(int BaseAddress, const SensorDHCPClientProperties& properties);
+  
+  void initializeClient();
+  dhcp_client_type getClientType() const { return clientType; }
 private:
-	uint8_t clientAddress;
-	dhcp_client_type clientType;
-	bool initialized;
-	bool connected;
+  uint8_t clientAddress;
+  dhcp_client_type clientType;
+  bool initialized;
+  bool connected;
 };
 
 #endif //INFINITAG_SENSOR_DHCP_CLIENT_PROPERTIES_H

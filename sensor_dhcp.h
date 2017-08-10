@@ -43,24 +43,24 @@ enum dhcp_client_type
 
 inline bool checkEEPROMVersion()
 {
-	byte majorVersion = EEPROM.read(0);
-	byte minorVersion = EEPROM.read(1);
-	byte patchVersion = EEPROM.read(2);
-	
-	if((majorVersion != SENSOR_DHCP_MAJOR_VERSION) ||
-		(minorVersion != SENSOR_DHCP_MINOR_VERSION) ||
-		(patchVersion != SENSOR_DHCP_PATCH_VERSION))
-	{
-		for (int i = 0; i < EEPROM.length(); i++) 
-		{
-			EEPROM.write(i, 0xFF);
-		}
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+  byte majorVersion = EEPROM.read(0);
+  byte minorVersion = EEPROM.read(1);
+  byte patchVersion = EEPROM.read(2);
+  
+  if((majorVersion != SENSOR_DHCP_MAJOR_VERSION) ||
+    (minorVersion != SENSOR_DHCP_MINOR_VERSION) ||
+    (patchVersion != SENSOR_DHCP_PATCH_VERSION))
+  {
+    for (int i = 0; i < EEPROM.length(); i++) 
+    {
+      EEPROM.write(i, 0xFF);
+    }
+    return false;
+  }
+  else
+  {
+    return true;
+  }
 }
 
 
